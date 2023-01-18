@@ -9,23 +9,25 @@ function Index(props) {
             <Form action='/create' method='post'>
                 <input type="input" name="name" placeholder="cheese's name"/>
                 <input type="input" name="image" placeholder="cheese's picture"/>
-                <input type="input" name="countryOfOrigin" placeholder="where the cheese is from"/>
+                <input type="input" name="countryOfOrigin" placeholder="origin of cheese"/>
 
                 <input type="submit" value="add new cheese"/>
 
             </Form>
 
             <h2> Cheese </h2>
-            {cheese.map(cheeses => (
-                <div>
-                    <Link to={`/$cheeses._id}`} className="cheeses">
-                        <h1>{cheeses.name}</h1>
+            <div className="container"> 
+            {cheese.map(cheese => (
+                <div className="card" key={cheese._id}>
+                    <Link to={`/${cheese._id}`} className="cheeses">
+                        <h1>{cheese.name}</h1>
                     </Link>
-                    <img src={cheeses.image} alt={cheeses.name}/>
-                    <h3>{cheeses.countryOfOrigin}</h3>
+                    <img src={cheese.image} alt={cheese.name}/>
+                    <h3>{cheese.countryOfOrigin}</h3>
             
                 </div>
-            ))}    
+           ))}   
+           </div>  
         </div>
     )
 }

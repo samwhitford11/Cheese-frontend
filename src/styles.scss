@@ -20,3 +20,43 @@ nav {
         }
     }
 }
+
+$imagesize: 100 px;
+$cardpadding: 5 px;
+
+image{
+    width: $imagesize;
+    height: $imagesize;
+    border-radius: 90px;
+    object-fit: contain;
+}
+
+
+
+.card{
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 10px;
+    justify-content: center;
+}
+
+@mixin gold-test-white-bg{
+    color: $maincolor;
+    background-color: $contrastcolor;
+}
+
+section,
+div{
+    form{
+        input{
+            @include white-test-gold-bg();
+            padding: 10 px;
+            font-size: 1.1em;
+            margin: 10px;
+
+            &[type="submit"]:hover{
+                @include gold-test-white-bg()
+            }    
+        }
+    }
+}

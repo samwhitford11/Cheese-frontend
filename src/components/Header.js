@@ -1,5 +1,12 @@
-function header(props) {
-    return <h1> Where's the crackers?</h1>
-}
+import {Link} from "react-router-dom";
 
-export default header;
+
+function Header (prop) {
+    return <nav className="nav">
+        <Link to='/'>
+            <div> Cheese App</div>
+        </Link>
+    </nav>
+  }
+  
+  export default Header;
